@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ {% for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {% endfor %}
+<form action="{{ request.path }}", method="post">
+    <label for="name">Enter Name</label>
+    <input type="text", name="name", placeholder="Name"><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

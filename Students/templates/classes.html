@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Created_On</th>
+        <th>Updated_On</th>
+        <th>Students</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for class in classes %}
+    <tr>
+        <td>{{classes.id}}</td>
+        <td>{{classes.name}}</td>
+        <td>{{classes.created_on}}</td>
+        <td>{{classes.updated_on}}</td>
+        <td>
+            {% for student in class.student %}
+            {{ student.student_name }}
+            {% endfor %}
+        </td>
+
+
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+</body>
+</html>
